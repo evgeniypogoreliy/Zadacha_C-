@@ -18,8 +18,21 @@ for(int i = 0; i < startArray.Length; i++) // Ищем количсвто эле
     char[] chars = startArray[i].ToCharArray();
     for(int j = 0; j <chars.Length; j++)
     {
-        if(j >= 3) endLengthArr++;
+        if(j <= 3) endLengthArr++;
     }
 }
 
 string[] endArray = new string[endLengthArr]; // Массив с результатом
+
+for(int i = 0; i < startArray.Length; i++) // Записываем необходимые строки в массив с результатом
+{
+    char[] chars = startArray[i].ToCharArray();
+        if(chars.Length <= 3) endArray[i] = new string(chars);
+    
+}
+
+System.Console.WriteLine("Элементы массива с результатом: ");
+for(int i = 0; i <endArray.Length; i++)
+{
+    Console.Write(endArray[i]+" ");
+}
